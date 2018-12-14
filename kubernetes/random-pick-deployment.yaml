@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-pick-deployment
+  labels:
+    app: random-pick
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: random-pick
+  template:
+    metadata:
+      labels:
+        app: random-pick
+    spec:
+      containers:
+      - name: random-pick
+        image: efavre/random-pick:latest
+        ports:
+        - containerPort: 3000

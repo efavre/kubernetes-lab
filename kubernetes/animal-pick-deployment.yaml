@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: animal-pick-deployment
+  labels:
+    app: animal-pick
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: animal-pick
+  template:
+    metadata:
+      labels:
+        app: animal-pick
+    spec:
+      containers:
+      - name: animal-pick
+        image: animal-pick
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3001

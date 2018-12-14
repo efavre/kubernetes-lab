@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: animal-pick-service
+spec:
+  type: ClusterIP
+  selector:
+    app: animal-pick
+  ports:
+  - name: http
+    protocol: TCP
+    port: 3001
+    targetPort: 3001

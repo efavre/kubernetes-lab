@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: random-pick-service
+spec:
+  type: ClusterIP
+  selector:
+    app: random-pick
+  ports:
+  - name: http
+    protocol: TCP
+    port: 3000
+    targetPort: 3000
